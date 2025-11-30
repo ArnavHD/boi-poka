@@ -1,8 +1,10 @@
 import React, { use } from "react";
 
-const Book = ({ bookPromise }) => {
-  const data = use(bookPromise); 
-  console.log(data);
+const Book = ({ book }) => {
+  //   const data = use(bookPromise);
+  //   console.log(data);
+
+  console.log(book)
   return (
     <div>
       <h1>Just book</h1>
