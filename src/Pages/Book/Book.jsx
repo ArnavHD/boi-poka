@@ -1,4 +1,5 @@
 import React from "react";
+import { FaStarHalfStroke } from "react-icons/fa6";
 
 const Book = ({ book }) => {
   //   const data = use(bookPromise);
@@ -6,24 +7,35 @@ const Book = ({ book }) => {
 
   console.log(book);
 
-  const { bookName, author, image , } = book;
+  const { bookName, image, rating, category, tags, yearOfPublishing, publisher } =
+    book;
   return (
-    <div className="card bg-base-100  shadow-sm">
-      <figure className="px-18 py-10">
-        <img
-          src={image}
-          alt="Shoes"
-          className="rounded-xl w-2/3 h-2/3"
-        />
+    <div className="card bg-base-100 w-full border p-6 shadow">
+      <figure className="p-4 bg-gray-100 w-2/3 mx-auto">
+        <img className="h-[166px] rounded-sm" src={image} alt="Shoes" />
       </figure>
-      <div className="card-body items-center text-center">
-        <h2 className="card-title">Card Title</h2>
+      <div className="card-body">
+        <div className="flex justify-around">
+          {tags.map((tag) => (
+            <button>{tag}</button>
+          ))}
+        </div>
+        <h2 className="card-title">
+          {bookName}
+          <div className="badge badge-secondary">{yearOfPublishing}</div>
+        </h2>
         <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
+          Book By : {publisher}
         </p>
-        <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+        <div className=" border-t-1 border-dashed">
+             
+        </div>
+        <div className="card-actions justify-end">
+          <div className="badge ">{category}</div>
+          <div className="badge ">
+            {rating}
+            <FaStarHalfStroke />
+          </div>
         </div>
       </div>
     </div>
