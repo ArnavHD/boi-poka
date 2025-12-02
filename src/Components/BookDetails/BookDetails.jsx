@@ -26,7 +26,7 @@ const BookDetails = () => {
       <img className=" w-48" src={image} alt="" />
       <h5>{bookName}</h5>
       <button
-        onClick={()=> handleMarkAsRead(bookId)}
+        onClick={()=> handleMarkAsRead(id)}
         className="btn btn-active btn-success m-2"
       >
         Mark as Read
